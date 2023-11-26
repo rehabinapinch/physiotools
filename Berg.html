@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berg Balance Short Form Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Berg Balance Short Form Calculator</h2>
+
+    <label for="item1">Reaching forward with arm stretched (0-4):</label>
+    <input type="number" id="item1" min="0" max="4">
+
+    <label for="item2">Standing with eyes closed (0-4):</label>
+    <input type="number" id="item2" min="0" max="4">
+
+    <label for="item3">Standing with one foot in front (0-4):</label>
+    <input type="number" id="item3" min="0" max="4">
+
+    <label for="item4">Turning to look behind (0-4):</label>
+    <input type="number" id="item4" min="0" max="4">
+
+    <label for="item5">Retrieving object from floor from standing (0-4):</label>
+    <input type="number" id="item5" min="0" max="4">
+
+    <label for="item6">Standing on one foot (0-4):</label>
+    <input type="number" id="item6" min="0" max="4">
+
+    <label for="item7">Sitting to standing (0-4):</label>
+    <input type="number" id="item7" min="0" max="4">
+
+    <button onclick="calculateScore()">Calculate Total Score</button>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateScore() {
+            var item1 = parseInt(document.getElementById('item1').value);
+            var item2 = parseInt(document.getElementById('item2').value);
+            var item3 = parseInt(document.getElementById('item3').value);
+            var item4 = parseInt(document.getElementById('item4').value);
+            var item5 = parseInt(document.getElementById('item5').value);
+            var item6 = parseInt(document.getElementById('item6').value);
+            var item7 = parseInt(document.getElementById('item7').value);
+
+            var totalScore = item1 + item2 + item3 + item4 + item5 + item6 + item7;
+
+            document.getElementById('result').innerHTML = "<p>Total Berg Balance Short Form Score: " + totalScore + "</p>";
+        }
+    </script>
+</body>
+</html>
